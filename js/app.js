@@ -23,6 +23,9 @@ const pinIcon =
 const gaugeIcon =
   '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 19a9 9 0 1 1 14 0"/><path d="M12 13l3.5-3.5"/></svg>';
 
+// Six months or less reads as urgency — the pill goes red.
+const pillClass = (l) => `pill${l.monthsLeft <= 6 ? " pill-urgent" : ""}`;
+
 function cardHTML(l) {
   const incentive = l.incentive > 0
     ? `<span class="flag-incentive">${money(l.incentive)} incentive</span>`
@@ -31,13 +34,11 @@ function cardHTML(l) {
     <a class="card" href="listing.html?id=${l.id}">
       <div class="card-photo">
         <img src="${l.image}" alt="${l.year} ${l.make} ${l.model}" loading="lazy">
-        <span class="pill">${clockIcon} ${l.monthsLeft} mo left</span>
+        <span class="${pillClass(l)}">${clockIcon} ${l.monthsLeft} mo left</span>
         ${incentive}
       </div>
       <div class="card-body">
-        <div class="card-price-row">
-          <span class="card-price">${money(l.payment)}<small>/mo + tax</small></span>
-        </div>
+        <span class="card-price">${money(l.payment)}<small>/mo + tax</small></span>
         <p class="card-title">${l.year} ${l.make} ${l.model} ${l.trim}</p>
         <span class="card-sub">${l.color} · ${l.drivetrain} · ${l.fuel}</span>
         <div class="card-meta">
@@ -200,7 +201,7 @@ if (detailRoot) {
 
       <div class="detail-photo">
         <img src="${l.image}" alt="${l.year} ${l.make} ${l.model}">
-        <span class="pill">${clockIcon} ${l.monthsLeft} months remaining</span>
+        <span class="${pillClass(l)}">${clockIcon} ${l.monthsLeft} months remaining</span>
         ${l.incentive > 0 ? `<span class="flag-incentive">${money(l.incentive)} incentive</span>` : ""}
       </div>
 

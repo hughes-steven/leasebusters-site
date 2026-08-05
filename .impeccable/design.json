@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-05T20:30:00Z",
+  "title": "Design System: LeaseBusters",
+  "extensions": {
+    "colorMeta": {
+      "ledger-green": { "role": "primary", "displayName": "Ledger Green", "canonical": "#0e6b4f", "tonalRamp": ["#04231a", "#07382a", "#0a523c", "#0e6b4f", "#2e8768", "#5ea78c", "#93c6b1", "#d2e8dd"] },
+      "urgency-red": { "role": "secondary", "displayName": "Urgency Red", "canonical": "#b23a2e", "tonalRamp": ["#33100c", "#571d16", "#832a21", "#b23a2e", "#c65f53", "#d8887e", "#e8b3ac", "#f6ddd9"] },
+      "audit-ochre": { "role": "secondary", "displayName": "Audit Ochre", "canonical": "#8a6d1f", "tonalRamp": ["#291f08", "#453610", "#674f16", "#8a6d1f", "#a58a41", "#c0a96f", "#d9c9a0", "#efe6d0"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1b2420", "tonalRamp": ["#0d1210", "#1b2420", "#2b3833", "#41504a", "#5d6b64", "#8a958f", "#bcc3bf", "#e5e8e6"] },
+      "ledger-paper": { "role": "neutral", "displayName": "Ledger Paper", "canonical": "#f6f4ee", "tonalRamp": ["#4a463b", "#6e6957", "#948e77", "#b5af9a", "#cfc9b8", "#e3dfd2", "#efece2", "#f6f4ee"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Homepage hero only; italic green spans mark the emotional pivot." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads and page titles." },
+      "title": { "displayName": "Title", "purpose": "Listing card vehicle names — the serif at data scale." },
+      "data": { "displayName": "Data", "purpose": "Every price and payment. Inter 700 with tabular-nums; never the serif." },
+      "body": { "displayName": "Body", "purpose": "Prose at ~62ch max measure." },
+      "label": { "displayName": "Label", "purpose": "Uppercase filter and fact labels." }
+    },
+    "shadows": [
+      { "name": "lift", "value": "0 2px 4px rgba(27,36,32,0.05), 0 18px 30px -18px rgba(27,36,32,0.28)", "purpose": "The system's only shadow: hover/focus elevation and the hero card deck. Surfaces are flat at rest." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Exponential ease-out for all transitions and the hero settle entrance." },
+      { "name": "settle", "value": "0.9s ease-out, translateY(22px)+rotate to rest, staggered 80ms", "purpose": "The one authored moment: hero preview cards settle onto the desk. Disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1000px" },
+      { "name": "mobile", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The action color at work: white on Ledger Green, quiet 10px rectangle.",
+      "html": "<button class=\"ds-btn-primary\">Browse lease takeovers</button>",
+      "css": ".ds-btn-primary { background: #0e6b4f; color: #fff; font-family: Inter, sans-serif; font-weight: 600; font-size: 15.5px; padding: 13px 24px; border: none; border-radius: 10px; cursor: pointer; transition: background 0.15s ease, transform 0.12s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #0a523c; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #0e6b4f; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action: transparent with a hairline border that darkens on hover.",
+      "html": "<button class=\"ds-btn-ghost\">Get out of my lease</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #1b2420; font-family: Inter, sans-serif; font-weight: 600; font-size: 15.5px; padding: 13px 24px; border: 1.5px solid #cfc9b8; border-radius: 10px; cursor: pointer; transition: border-color 0.15s ease; } .ds-btn-ghost:hover { border-color: #1b2420; } .ds-btn-ghost:focus-visible { outline: 2px solid #0e6b4f; outline-offset: 2px; }"
+    },
+    {
+      "name": "Term Pill",
+      "kind": "chip",
+      "refersTo": "pill-term",
+      "description": "Floats on listing photos; dark scrim normally, Urgency Red at ≤6 months remaining.",
+      "html": "<span class=\"ds-pill\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg> 19 mo left</span> <span class=\"ds-pill ds-pill-urgent\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg> 5 mo left</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(18,24,21,0.8); color: #fff; font-family: Inter, sans-serif; font-weight: 600; font-size: 13.5px; padding: 7px 13px; border-radius: 999px; font-variant-numeric: tabular-nums; margin-right: 8px; } .ds-pill-urgent { background: #b23a2e; }"
+    },
+    {
+      "name": "Incentive Chip",
+      "kind": "chip",
+      "refersTo": "chip-incentive",
+      "description": "Cash-on-transfer flag; money is green.",
+      "html": "<span class=\"ds-chip-incentive\">$1,000 incentive</span>",
+      "css": ".ds-chip-incentive { display: inline-block; background: #0e6b4f; color: #fff; font-family: Inter, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.03em; padding: 6px 11px; border-radius: 999px; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Listing Card",
+      "kind": "card",
+      "refersTo": "card-listing",
+      "description": "The signature component: flat hairline card, payment as the lead number, serif vehicle title, lifts only on hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-photo\"><span class=\"ds-card-pill\">27 mo left</span></div><div class=\"ds-card-body\"><span class=\"ds-card-price\">$438<small>/mo + tax</small></span><p class=\"ds-card-title\">2024 Honda CR-V Sport</p><span class=\"ds-card-sub\">Platinum White Pearl · AWD · Hybrid</span></div></a>",
+      "css": ".ds-card { display: block; width: 300px; background: #fff; border: 1px solid #e3dfd2; border-radius: 14px; overflow: hidden; text-decoration: none; color: #1b2420; font-family: Inter, sans-serif; transition: transform 0.16s cubic-bezier(0.16,1,0.3,1), box-shadow 0.16s cubic-bezier(0.16,1,0.3,1); } .ds-card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(27,36,32,0.05), 0 18px 30px -18px rgba(27,36,32,0.28); } .ds-card-photo { position: relative; aspect-ratio: 16/9; background: linear-gradient(135deg, #41504a, #1b2420); } .ds-card-pill { position: absolute; left: 12px; bottom: 12px; background: rgba(18,24,21,0.8); color: #fff; font-weight: 600; font-size: 13.5px; padding: 7px 13px; border-radius: 999px; font-variant-numeric: tabular-nums; } .ds-card-body { padding: 16px 18px 18px; } .ds-card-price { font-weight: 700; font-size: 23px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; } .ds-card-price small { font-weight: 500; font-size: 13.5px; color: #5d6b64; letter-spacing: 0; } .ds-card-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 17.5px; margin: 4px 0 2px; } .ds-card-sub { font-size: 14px; color: #5d6b64; }"
+    },
+    {
+      "name": "Filter Select",
+      "kind": "input",
+      "description": "White surface, hairline border, green accent focus.",
+      "html": "<label class=\"ds-label\">Months remaining</label><select class=\"ds-select\"><option>Any term</option><option>12+ months</option></select>",
+      "css": ".ds-label { display: block; font-family: Inter, sans-serif; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: #5d6b64; margin-bottom: 8px; } .ds-select { font-family: Inter, sans-serif; font-size: 14.5px; color: #1b2420; background: #fff; border: 1px solid #cfc9b8; border-radius: 10px; padding: 10px 12px; min-width: 200px; } .ds-select:focus-visible { outline: 2px solid #0e6b4f; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "description": "Editorial structure: serif claim beside prose between hairline rules. Replaces icon-card grids.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-ledger-row\"><h3>Exit <em>without penalties</em></h3><p>Transferring a lease to an approved driver costs a lender fee of a few hundred dollars — and your obligation ends the day the papers are signed.</p></div></div>",
+      "css": ".ds-ledger { border-top: 1px solid #cfc9b8; max-width: 720px; } .ds-ledger-row { display: grid; grid-template-columns: 240px 1fr; gap: 12px 40px; padding: 26px 2px; border-bottom: 1px solid #cfc9b8; font-family: Inter, sans-serif; } .ds-ledger-row h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 23px; margin: 0; color: #1b2420; } .ds-ledger-row h3 em { font-style: italic; color: #0e6b4f; } .ds-ledger-row p { margin: 0; color: #41504a; font-size: 15px; line-height: 1.55; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Open Ledger",
+    "overview": "LeaseBusters shows every number a lease shopper needs before contact is ever made, and the design system treats that transparency as its aesthetic. The interface is a well-kept ledger: warm paper, dark green-black ink, hairline rules instead of boxes, and numerals that align in tabular columns. The system carries the heritage of Canada's original lease takeover marketplace (est. 1990) through a serif display voice, while every piece of data is set in a plainspoken sans. Green is the color of money and action; red is spent only on genuine urgency. Surfaces are flat at rest and lift only when the visitor reaches for them.",
+    "keyCharacteristics": [
+      "Paper-and-ink warmth with hairline structure, not card clutter",
+      "The deal math is the hero: numbers large, tabular, and never hidden",
+      "Serif voice (Fraunces) for persuasion, sans (Inter) for facts",
+      "One accent doing real work; urgency color rationed",
+      "Flat at rest, elevation as a response to intent"
+    ],
+    "rules": [
+      { "name": "The Money-Is-Green Rule", "body": "Green means money or action, nothing else — and red is spent only on urgency (≤6 months left, over-pace kilometres). A screen with red on it should feel like it's telling you to hurry, because it is.", "section": "colors" },
+      { "name": "The Serif-Speaks-Sans-Counts Rule", "body": "Fraunces persuades; Inter informs. Every numeral on the site is Inter with tabular figures so columns of the ledger actually align.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "If nothing is happening, nothing floats. A surface earns shadow by being reached for, not by existing.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every numeral in Inter with tabular figures — prices, terms, odometers, fees.",
+      "Do separate content with hairlines on the paper before reaching for a box; a card must earn its border.",
+      "Do show the complete deal math on any surface that represents a listing.",
+      "Do draw icons as consistent 2px-stroke SVGs at 13–24px; theme selection, caret, and focus rings from the palette.",
+      "Do keep the one authored motion moment: the hero deck settling in, honoring prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use red for anything except genuine time pressure or over-pace warnings.",
+      "Don't put an eyebrow/kicker label above a heading, or open a section with a big-number stat trio.",
+      "Don't build page structure from same-size icon+heading+text cards; use ledger rows.",
+      "Don't set data in Fraunces or headlines in Inter.",
+      "Don't add ambient shadows to resting surfaces, gradient text, or glyph/emoji icons in the UI."
+    ]
+  }
+}

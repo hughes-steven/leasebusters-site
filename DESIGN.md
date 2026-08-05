@@ -154,7 +154,7 @@ A single 1160px column with 24px page gutters. Listing grids auto-fill at a 290p
 
 ## Elevation & Depth
 
-Flat at rest. Surfaces declare themselves with 1px hairline borders on paper, never with ambient shadow. Depth appears in exactly two places: as a response to intent (a listing card lifts 3px under `--shadow-lift` on hover/focus), and on the hero's stacked preview deck, which is allowed to cast shadow because it depicts physical cards on the desk.
+Flat at rest. Surfaces declare themselves with 1px hairline borders on paper, never with ambient shadow. Depth appears in exactly two places: as a response to intent (a listing card lifts 3px under `--shadow-lift` on hover/focus), and on the hero deal card, which is allowed to cast shadow because it depicts a physical card on the desk.
 
 ### Shadow Vocabulary
 - **Lift** (`box-shadow: 0 2px 4px rgba(27,36,32,0.05), 0 18px 30px -18px rgba(27,36,32,0.28)`): hover/focus elevation and the hero deck. The only shadow in the system.
@@ -193,6 +193,9 @@ Sticky, blurred Ledger Paper at 94% opacity with a bottom hairline. Serif wordma
 ### Deal Math Card
 Green-tinted panel of ledger lines: dashed hairlines between rows, labels left, tabular values right, closing with the effective payment in 30px Data type in Ledger Green.
 
+### Hero Deal Card
+The homepage hero's right column is one real listing — the live deal whose incentive buys the largest monthly saving (`incentive ÷ months remaining`), selected in code, never hand-picked. A green header strip ("Top deal" / "Save $X/mo"), the photo with its term pill, the serif vehicle title, and a three-line deal-math ledger ending in the effective payment. Slightly rotated (−1°), desk-shadowed, and the site's one authored entrance animation.
+
 ## Do's and Don'ts
 
 ### Do:
@@ -200,7 +203,7 @@ Green-tinted panel of ledger lines: dashed hairlines between rows, labels left, 
 - **Do** separate content with hairlines on the paper before reaching for a box; a card must earn its border.
 - **Do** show the complete deal math on any surface that represents a listing.
 - **Do** draw icons as consistent 2px-stroke SVGs at 13–24px; theme selection, caret, and focus rings from the palette.
-- **Do** keep the one authored motion moment: the hero deck settling in with the exponential ease-out (`cubic-bezier(0.16,1,0.3,1)`), honoring `prefers-reduced-motion`.
+- **Do** keep the one authored motion moment: the hero deal card settling onto the desk with the exponential ease-out (`cubic-bezier(0.16,1,0.3,1)`), honoring `prefers-reduced-motion`.
 
 ### Don't:
 - **Don't** use red for anything except genuine time pressure or over-pace warnings.

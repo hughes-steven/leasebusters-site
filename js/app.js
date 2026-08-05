@@ -64,16 +64,30 @@ if (featuredGrid) {
     .slice(0, 6);
   featuredGrid.innerHTML = featured.map(cardHTML).join("");
 
-  // Hero preview cards — two contrasting deals
-  const heroFront = LISTINGS.find((l) => l.id === "2024-honda-crv-sport");
-  const heroBack = LISTINGS.find((l) => l.id === "2023-audi-rs6-avant");
+  // The hero lease: the live listing whose incentive buys the biggest
+  // monthly saving. Data-driven so it survives the phase-2 backend swap.
   const heroVisual = $("#hero-visual");
-  if (heroVisual && heroFront && heroBack) {
+  const deal = LISTINGS.filter((l) => l.incentive > 0)
+    .sort((a, b) => b.incentive / b.monthsLeft - a.incentive / a.monthsLeft)[0];
+  if (heroVisual && deal) {
+    const perMonth = Math.round(deal.incentive / deal.monthsLeft);
     heroVisual.innerHTML = `
-      <div class="hero-card back">${cardHTML(heroBack)}</div>
-      <div class="hero-card front">${cardHTML(heroFront)}</div>`;
-    // Cards inside the hero are previews; strip the outer link styles' lift
-    $$(".hero-card .card", heroVisual).forEach((c) => (c.style.border = "none"));
+      <a class="hero-deal" href="listing.html?id=${deal.id}">
+        <div class="hero-deal-strip"><span>Top deal</span><span class="num">Save ${money(perMonth)}/mo</span></div>
+        <div class="hero-deal-photo">
+          <img src="${deal.image}" alt="${deal.year} ${deal.make} ${deal.model}">
+          <span class="${pillClass(deal)}">${clockIcon} ${deal.monthsLeft} mo left</span>
+        </div>
+        <div class="hero-deal-body">
+          <p class="hero-deal-title">${deal.year} ${deal.make} ${deal.model} ${deal.trim}</p>
+          <span class="hero-deal-sub">${deal.color} · ${deal.drivetrain} · ${deal.city}, ${deal.province}</span>
+          <div class="hero-deal-math">
+            <div class="hero-deal-row"><span>Monthly payment</span><b>${money(deal.payment)}</b></div>
+            <div class="hero-deal-row"><span>${money(deal.incentive)} incentive over ${deal.monthsLeft} months</span><b>− ${money(perMonth)}/mo</b></div>
+            <div class="hero-deal-total"><span>Effective payment</span><b>${money(deal.payment - perMonth)}/mo</b></div>
+          </div>
+        </div>
+      </a>`;
   }
 }
 

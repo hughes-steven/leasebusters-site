@@ -23,7 +23,7 @@
     ],
     "motion": [
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Exponential ease-out for all transitions and the hero settle entrance." },
-      { "name": "settle", "value": "0.9s ease-out, translateY(22px)+rotate to rest, staggered 80ms", "purpose": "The one authored moment: hero preview cards settle onto the desk. Disabled under prefers-reduced-motion." }
+      { "name": "settle", "value": "0.9s ease-out, translateY(22px)+rotate(-1deg) to rest", "purpose": "The one authored moment: the hero deal card settles onto the desk. Disabled under prefers-reduced-motion." }
     ],
     "breakpoints": [
       { "name": "tablet", "value": "1000px" },
@@ -106,7 +106,7 @@
       "Do separate content with hairlines on the paper before reaching for a box; a card must earn its border.",
       "Do show the complete deal math on any surface that represents a listing.",
       "Do draw icons as consistent 2px-stroke SVGs at 13–24px; theme selection, caret, and focus rings from the palette.",
-      "Do keep the one authored motion moment: the hero deck settling in, honoring prefers-reduced-motion."
+      "Do keep the one authored motion moment: the hero deal card settling in, honoring prefers-reduced-motion."
     ],
     "donts": [
       "Don't use red for anything except genuine time pressure or over-pace warnings.",

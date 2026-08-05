@@ -245,13 +245,12 @@ h4 { margin: 0 0 0.5em; }
   text-decoration: none;
   color: var(--ink);
   box-shadow: var(--shadow-lift);
-  transform: rotate(-1deg);
   animation: settle 0.9s var(--ease-out) backwards;
   transition: transform 0.16s var(--ease-out);
 }
 
 .hero-deal:hover, .hero-deal:focus-visible {
-  transform: rotate(-1deg) translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .hero-deal-strip {
@@ -313,8 +312,8 @@ h4 { margin: 0 0 0.5em; }
 .hero-deal-total b { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
 
 @keyframes settle {
-  from { transform: translateY(22px) rotate(0deg); opacity: 0; }
-  to { transform: translateY(0) rotate(-1deg); opacity: 1; }
+  from { transform: translateY(22px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

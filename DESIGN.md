@@ -194,7 +194,7 @@ Sticky, blurred Ledger Paper at 94% opacity with a bottom hairline. Serif wordma
 Green-tinted panel of ledger lines: dashed hairlines between rows, labels left, tabular values right, closing with the effective payment in 30px Data type in Ledger Green.
 
 ### Hero Deal Card
-The homepage hero's right column is one real listing — the live deal whose incentive buys the largest monthly saving (`incentive ÷ months remaining`), selected in code, never hand-picked. A green header strip ("Top deal" / "Save $X/mo"), the photo with its term pill, the serif vehicle title, and a three-line deal-math ledger ending in the effective payment. Slightly rotated (−1°), desk-shadowed, and the site's one authored entrance animation.
+The homepage hero's right column is one real listing — the live deal whose incentive buys the largest monthly saving (`incentive ÷ months remaining`), selected in code, never hand-picked. A green header strip ("Top deal" / "Save $X/mo"), the photo with its term pill, the serif vehicle title, and a three-line deal-math ledger ending in the effective payment. Set square on the page, desk-shadowed, and the site's one authored entrance animation.
 
 ## Do's and Don'ts
 
@@ -211,3 +211,4 @@ The homepage hero's right column is one real listing — the live deal whose inc
 - **Don't** build page structure from same-size icon+heading+text cards; use ledger rows.
 - **Don't** set data in Fraunces or headlines in Inter.
 - **Don't** add ambient shadows to resting surfaces, gradient text, or glyph/emoji icons (★, →, emoji) in the UI.
+- **Don't** tilt or rotate surfaces for playfulness — a ledger is ruled square, and every card sits square on the page (client-confirmed 2026-08-05).

@@ -23,7 +23,7 @@
     ],
     "motion": [
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Exponential ease-out for all transitions and the hero settle entrance." },
-      { "name": "settle", "value": "0.9s ease-out, translateY(22px)+rotate(-1deg) to rest", "purpose": "The one authored moment: the hero deal card settles onto the desk. Disabled under prefers-reduced-motion." }
+      { "name": "settle", "value": "0.9s ease-out, translateY(22px) to rest", "purpose": "The one authored moment: the hero deal card settles onto the desk. Disabled under prefers-reduced-motion." }
     ],
     "breakpoints": [
       { "name": "tablet", "value": "1000px" },
@@ -113,7 +113,8 @@
       "Don't put an eyebrow/kicker label above a heading, or open a section with a big-number stat trio.",
       "Don't build page structure from same-size icon+heading+text cards; use ledger rows.",
       "Don't set data in Fraunces or headlines in Inter.",
-      "Don't add ambient shadows to resting surfaces, gradient text, or glyph/emoji icons in the UI."
+      "Don't add ambient shadows to resting surfaces, gradient text, or glyph/emoji icons in the UI.",
+      "Don't tilt or rotate surfaces for playfulness — every card sits square on the page."
     ]
   }
 }

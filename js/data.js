@@ -209,7 +209,7 @@ const LISTINGS = [
     kmPerYear: 12000, odometer: 18750, kmStatus: "under",
     buyout: 98500, incentive: 0, transferFee: 500,
     city: "Winnipeg", province: "MB",
-    posted: "2026-07-18", seller: "Private seller",
+    posted: "2026-07-18", seller: "Crown Nissan", sellerType: "dealer",
     image: "images/car-3.jpg",
     highlights: [
       "One of the final R35 GT-Rs sold in Canada",

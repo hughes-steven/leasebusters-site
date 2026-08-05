@@ -23,6 +23,17 @@ A Canadian marketplace that transfers existing car leases from exiters to takers
 
 **Heritage (confirmed):** Canada's original lease takeover marketplace, established 1990 — decades before Clutch or any VC-funded alternative existed. Tens of thousands of completed transfers. Competitors can claim speed or scale; none can claim origin.
 
+## Business Model
+
+Confirmed 2026-08-05:
+
+- **Browsing and taking over a lease: free, no account required.** Takers pay only their lender's transfer fee.
+- **Private individuals list their lease free.**
+- **Dealerships pay $50 per listing** (inventory, demonstrators, courtesy cars).
+- **White-Glove Exit: $400 flat** — LeaseBusters staff run the seller's entire exit: photography, listing, marketing, buyer vetting, negotiation, and lender paperwork through to a registered transfer.
+
+Revenue comes from dealer listing fees and the white-glove service. Fees are published openly on the site (the "fee ledger") — pricing transparency is part of the positioning.
+
 ## Operating Context
 
 - Transfers are processed by each automaker's finance arm (credit check identical to a new lease); the marketplace brokers discovery and guidance, not the credit decision.

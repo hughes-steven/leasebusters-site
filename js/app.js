@@ -23,6 +23,9 @@ const pinIcon =
 const gaugeIcon =
   '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 19a9 9 0 1 1 14 0"/><path d="M12 13l3.5-3.5"/></svg>';
 
+const storeIcon =
+  '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10M2 10l2-6h16l2 6M2 10h20M10 20v-6h4v6"/></svg>';
+
 // Six months or less reads as urgency — the pill goes red.
 const pillClass = (l) => `pill${l.monthsLeft <= 6 ? " pill-urgent" : ""}`;
 
@@ -44,6 +47,7 @@ function cardHTML(l) {
         <div class="card-meta">
           <span>${gaugeIcon} ${km(l.kmPerYear)}/yr</span>
           <span>${pinIcon} ${l.city}, ${l.province}</span>
+          ${l.sellerType === "dealer" ? `<span>${storeIcon} Dealer</span>` : ""}
         </div>
       </div>
     </a>`;
@@ -210,7 +214,7 @@ if (detailRoot) {
     <div>
       <div class="detail-title">
         <h1>${l.year} ${l.make} ${l.model} ${l.trim}</h1>
-        <p>${l.color} · ${l.drivetrain} · ${l.fuel} · Listed by ${l.seller.toLowerCase()} in ${l.city}, ${PROVINCES[l.province] || l.province}</p>
+        <p>${l.color} · ${l.drivetrain} · ${l.fuel} · ${l.sellerType === "dealer" ? `Dealer listing by ${l.seller}` : `Listed by ${l.seller.toLowerCase()}`} in ${l.city}, ${PROVINCES[l.province] || l.province}</p>
       </div>
 
       <div class="detail-photo">
@@ -254,7 +258,7 @@ if (detailRoot) {
       <div class="panel">
         <h2>How the transfer works</h2>
         <ol class="steps" style="list-style:none;margin:0;padding:0;display:grid;gap:18px">
-          <li class="step"><span class="step-num">1</span><div><b>Request the takeover</b><p>Tell the seller you're interested and ask any questions about the car.</p></div></li>
+          <li class="step"><span class="step-num">1</span><div><b>Request the takeover</b><p>Tell the seller you're interested and ask any questions about the car. Free, no account required.</p></div></li>
           <li class="step"><span class="step-num">2</span><div><b>Credit application</b><p>The automaker's finance arm approves you the same way they approved the original lease.</p></div></li>
           <li class="step"><span class="step-num">3</span><div><b>Sign & drive</b><p>Transfer paperwork is signed, the ${money(l.transferFee)} lender fee is paid, and the lease is yours.</p></div></li>
         </ol>
@@ -274,7 +278,7 @@ if (detailRoot) {
       </div>
       <a class="btn btn-primary btn-lg" href="#" onclick="alert('This is a design prototype — the takeover flow ships in phase 2.');return false;">Request this takeover</a>
       <a class="btn btn-ghost" href="listings.html" style="margin-top:10px">Keep browsing</a>
-      <p class="summary-note">${l.incentive > 0 ? "*Incentive paid to you at transfer, spread across remaining months. " : ""}Payments exclude sales tax. Sample listing for demonstration.</p>
+      <p class="summary-note">${l.incentive > 0 ? "*Incentive paid to you at transfer, spread across remaining months. " : ""}Browsing and takeover requests are free — no account required. Payments exclude sales tax. Sample listing for demonstration.</p>
     </aside>`;
 
   // Similar listings — same body style first, then same make

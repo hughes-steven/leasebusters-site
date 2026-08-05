@@ -472,6 +472,33 @@ a.card:hover, a.card:focus-visible {
 
 .ledger-row p { margin: 0; color: var(--ink-soft); font-size: 16px; max-width: 62ch; }
 
+/* Fee ledger: the pricing table as ledger entries.
+   Free tiers print in green — free is a deal, and money is green. */
+.fee-row {
+  display: grid;
+  grid-template-columns: 300px 1fr auto;
+  gap: 8px 48px;
+  padding: 24px 2px;
+  border-bottom: 1px solid var(--line-strong);
+  align-items: baseline;
+}
+
+.fee-row h3 { font-size: 21px; margin: 0; }
+
+.fee-row p { margin: 0; color: var(--ink-soft); font-size: 15px; max-width: 56ch; }
+
+.fee {
+  justify-self: end;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.fee small { font-weight: 500; font-size: 13.5px; color: var(--muted); letter-spacing: 0; }
+
+.fee.free { color: var(--green); }
+
 /* How it works — two journeys */
 .journeys {
   display: grid;
@@ -967,6 +994,9 @@ input[type="range"] { accent-color: var(--green); }
   .journeys { grid-template-columns: 1fr; }
   .math-band { grid-template-columns: 1fr; }
   .ledger-row { grid-template-columns: 1fr; gap: 8px; }
+  .fee-row { grid-template-columns: 1fr auto; gap: 8px 24px; }
+  .fee-row p { grid-column: 1 / -1; }
+  .fee { grid-row: 1; grid-column: 2; }
   .quote { grid-template-columns: 1fr; gap: 10px; }
   .detail { grid-template-columns: 1fr; }
   .summary { position: static; }

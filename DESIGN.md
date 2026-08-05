@@ -181,6 +181,9 @@ The signature component. White surface, 1px hairline, 14px radius, flat at rest;
 ### Ledger Row
 Editorial rows between Hairline Strong rules: a serif claim (23px, with an italic green phrase) beside supporting prose. Replaces icon-card grids everywhere.
 
+### Fee Ledger
+The pricing table as ledger rows: serif service name, prose description, and a right-aligned Data-type price (24px, tabular). Free tiers print their $0 in Ledger Green — free is a deal, and money is green. Paid fees print in Ink. The business model (free browse/takeover, free private listings, $50 dealer listings, $400 White-Glove Exit) is published here in full; hiding a fee would break the Open Ledger premise.
+
 ### Chips / Badges
 Pill-shaped, tabular numerals. Kilometre position uses the three-state color mapping: under = green tint, on pace = ochre tint, over = red tint.
 
